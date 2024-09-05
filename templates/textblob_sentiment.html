@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TextBlob Sentiment Analysis</title>
+</head>
+<body>
+    <h1>TextBlob Sentiment Analysis</h1>
+    <form method="post">
+        <textarea name="user_text" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
+        <input type="submit" value="Analyze Sentiment">
+    </form>
+    {% if sentiment %}
+        <h2>Sentiment Analysis Result</h2>
+        <p>Polarity: {{ sentiment.polarity }}</p>
+        <p>Subjectivity: {{ sentiment.subjectivity }}</p>
+        <p>Overall Sentiment: {{ sentiment | format_sentiment }}</p>
+    {% endif %}
+</body>
+</html>
